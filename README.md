@@ -6,7 +6,7 @@ An implementation of MapReduce for FPGAs for use with [Reconfigure.io](https://r
 
 Our MapReduce framework is provided as a way of scaling up simple functions, and as a template for other parallel patterns.
 
-For more background info, see our [blog post]().
+For more background info, see our [blog post](https://medium.com/the-recon/scaling-up-your-reconfigure-io-applications-17f2dbc797fc).
 
 ## Installing
 

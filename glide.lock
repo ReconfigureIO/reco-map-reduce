@@ -1,0 +1,12 @@
+hash: b3ae638d7423b0e5f36425e9ec4e0bf70684928b619d926df1e582d9ad0fdd2a
+updated: 2017-12-19T16:58:09.787613393Z
+imports:
+- name: github.com/ReconfigureIO/sdaccel
+  version: e93e5713d49cc1354dcd1d35cfaef85ba151e0a3
+  subpackages:
+  - axi/memory
+  - axi/protocol
+  - xcl
+- name: gopkg.in/yaml.v2
+  version: 287cf08546ab5e7e37d55a84f7ed3fd1db036de5
+testImports: []

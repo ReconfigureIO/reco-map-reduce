@@ -33,7 +33,7 @@ Reconfigure.io MapReduce projects have this initial structure:
     │   └── test
     │       └── main.go
     ├── input.go
-    ├── reco.yml
+    └── reco.yml
 
 `input.go` contains all the user-definable functions that will be used in the generated FPGA code.
 

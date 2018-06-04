@@ -1,0 +1,3 @@
+package: github.com/ReconfigureIO/reco-map-reduce
+import:
+- package: gopkg.in/yaml.v2

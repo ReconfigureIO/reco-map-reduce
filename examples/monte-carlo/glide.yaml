@@ -1,0 +1,11 @@
+package: .
+import:
+- package: github.com/ReconfigureIO/sdaccel
+  version: v0.15.1
+  subpackages:
+  - axi/memory
+  - axi/protocol
+- package: github.com/ReconfigureIO/fixed
+- package: github.com/ReconfigureIO/math
+  subpackages:
+  - rand

@@ -1,0 +1,19 @@
+hash: 83dcf3f678b0a00fcc6daa4eb481ba1c91321478d4b9827910e070b092e4189b
+updated: 2018-02-07T17:35:29.635104418Z
+imports:
+- name: github.com/ReconfigureIO/fixed
+  version: 019e8e9cf87a7b55a8a8b78eecbc1d7fede75eec
+  subpackages:
+  - host
+- name: github.com/ReconfigureIO/math
+  version: ff0761c314860dfd24574211ae844b18b48056ca
+  subpackages:
+  - rand
+- name: github.com/ReconfigureIO/sdaccel
+  version: e93e5713d49cc1354dcd1d35cfaef85ba151e0a3
+  subpackages:
+  - axi/arbitrate
+  - axi/memory
+  - axi/protocol
+  - xcl
+testImports: []

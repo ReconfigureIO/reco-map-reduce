@@ -1,0 +1,16 @@
+context:
+  output: fixed.Int26_6
+  function: Rands
+mapper:
+  type: Param
+  typeWidth: 160
+  deserialize: Deserialize
+  function: StocWalk
+  replicate: 4
+reducer:
+  type: Ret
+  typeWidth: 64
+  serialize: Serialize
+  function: Payoff
+  depth: 2
+  empty: RetInit

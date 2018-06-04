@@ -1,0 +1,14 @@
+---
+version: '2'
+services:
+  build:
+    build: docker/build
+    volumes:
+      - .:/mnt/src/github.com/ReconfigureIO/reco-map-reduce
+    working_dir: /mnt/src/github.com/ReconfigureIO/reco-map-reduce
+  test:
+    extends: build
+    environment:
+      - PATH=/mnt/src/github.com/ReconfigureIO/reco-map-reduce/dist:/mnt/bin:$PATH
+      - RECO_API_KEY
+    working_dir: /mnt/src/github.com/ReconfigureIO/reco-map-reduce/examples

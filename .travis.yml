@@ -1,0 +1,14 @@
+language: go
+go_import_path: github.com/ReconfigureIO/reco-map-reduce
+
+go:
+  - 1.9
+
+install:
+- curl https://glide.sh/get | sh
+- go get golang.org/x/tools/cmd/bundle
+- go install golang.org/x/tools/cmd/bundle
+
+script:
+  - make test integration
+  - make all

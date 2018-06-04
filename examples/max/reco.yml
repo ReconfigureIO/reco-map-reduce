@@ -1,0 +1,13 @@
+mapper:
+  type: uint32
+  typeWidth: 32
+  deserialize: Deserialize
+  function: Identity
+  replicate: 16
+reducer:
+  type: uint32
+  typeWidth: 32
+  serialize: Serialize
+  function: Max
+  depth: 4
+  empty: Uint32Init

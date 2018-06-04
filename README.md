@@ -1,6 +1,6 @@
 # reco-map-reduce
 
-[![Build Status](https://travis-ci.org/ReconfigureIO/reco-map-reduce.svg?branch=master)](https://travis-ci.org/ReconfigureIO/fixed)
+[![Build Status](https://travis-ci.org/ReconfigureIO/reco-map-reduce.svg?branch=master)](https://travis-ci.org/ReconfigureIO/reco-map-reduce)
 
 An implementation of MapReduce for FPGAs for use with [Reconfigure.io](https://reconfigure.io). You specify your mapper and reducer and use our framework to produce FPGA code that provides parallel processing.
 

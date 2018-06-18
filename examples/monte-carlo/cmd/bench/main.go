@@ -98,7 +98,7 @@ func doit(world xcl.World, krnl *xcl.Kernel, B *testing.B) {
 	krnl.Run(1, 1, 1)
 	B.StopTimer()
 
-	// Read a Result tyoe expected from the kernel
+	// Read a Result type expected from the kernel
 	var ret [2]fixed.Int26_6
 	err1 := binary.Read(outputBuff.Reader(), binary.LittleEndian, &ret)
 	if err1 != nil {

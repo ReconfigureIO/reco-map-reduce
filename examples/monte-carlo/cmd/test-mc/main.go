@@ -96,7 +96,7 @@ func main() {
 		krnl.Run(1, 1, 1)
 		done := time.Now()
 
-		// Read a Result tyoe expected from the kernel
+		// Read a Result type expected from the kernel
 		var ret Ret
 		err1 := binary.Read(outputBuff.Reader(), binary.LittleEndian, &ret)
 		if err1 != nil {

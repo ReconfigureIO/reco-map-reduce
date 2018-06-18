@@ -7,8 +7,6 @@ import (
 	"math/rand"
 	"testing"
 
-	"ReconfigureIO/reco-sdaccel/benchmarks"
-
 	"github.com/ReconfigureIO/fixed"
 	"github.com/ReconfigureIO/fixed/host"
 	"github.com/ReconfigureIO/sdaccel/xcl"
@@ -42,7 +40,7 @@ func main() {
 	}
 
 	bm := testing.Benchmark(f)
-	benchmarks.GipedaResults("md5", bm)
+	fmt.Printf("%s\t%s\t%s\n", "monte-carlo", bm, bm.MemString())
 }
 
 func doit(world xcl.World, krnl *xcl.Kernel, B *testing.B) {

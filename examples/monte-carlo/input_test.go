@@ -22,7 +22,7 @@ type RetF struct {
 	zero_trials uint32
 }
 
-func StocWalkF(rands *rand.Rand, p ParamF) RetF {
+func SimF(rands *rand.Rand, p ParamF) RetF {
 	d := p.drift
 	v := p.volatility
 	s0 := p.s0
@@ -73,7 +73,7 @@ func TestMapReduce(t *testing.T) {
 
 	// Simulation loop
 	for i := 0; i < int(N); i++ {
-		ret = Payoff(ret, StocWalk(rands, p))
+		ret = Payoff(ret, Sim(rands, p))
 	}
 	// Finalize the price calculation
 	avg := float64(ret.avg) / float64(1<<6)
@@ -114,7 +114,7 @@ func TestMapReduceF(t *testing.T) {
 
 	// Simulation loop
 	for i := 0; i < N; i++ {
-		ret = PayoffF(ret, StocWalkF(rands, p))
+		ret = PayoffF(ret, SimF(rands, p))
 	}
 
 	// Finalize the price calculation
@@ -152,7 +152,7 @@ func BenchmarkMonteCarlo(b *testing.B) {
 	b.SetBytes(5 * 4)
 
 	for n := 0; n < b.N; n++ {
-		ret = Payoff(ret, StocWalk(rands, p))
+		ret = Payoff(ret, Sim(rands, p))
 	}
 }
 
@@ -173,7 +173,7 @@ func BenchmarkMonteCarloFloat(b *testing.B) {
 		ret := RetF{}
 		for pb.Next() {
 			rands := rand.New(rand.NewSource(42))
-			ret = PayoffF(ret, StocWalkF(rands, p))
+			ret = PayoffF(ret, SimF(rands, p))
 		}
 	})
 }

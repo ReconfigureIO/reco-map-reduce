@@ -86,16 +86,18 @@ func Sim(rands <-chan fixed.Int26_6, p Param) Ret {
 
 		for i := uint16(p.days); i != 0; i-- {
 			W := <-rands
-			// The original formulation of this is as follows
-			// s0 = s0 + d.Mul(s0) + W.Mul(v.Mul(s0))
-			// we can factor out s0 to give the following
-			// s0 = s0.Mul(1 + d + W.Mul(v))
-			// 1 + d is constant, so refactor out
-			// hence the following
+			go func() {
+				// The original formulation of this is as follows
+				// s0 = s0 + d.Mul(s0) + W.Mul(v.Mul(s0))
+				// we can factor out s0 to give the following
+				// s0 = s0.Mul(1 + d + W.Mul(v))
+				// 1 + d is constant, so refactor out
+				// hence the following
 
-			// We'll separate out the m aggregator
-			// on s0 in the next for loop.
-			intermediates <- d + W.Mul(v)
+				// We'll separate out the m aggregator
+				// on s0 in the next for loop.
+				intermediates <- d + W.Mul(v)
+			}()
 		}
 
 	}()

@@ -1,3 +1,4 @@
+compiler: rio
 context:
   output: fixed.Int26_6
   function: Rands
